@@ -10349,25 +10349,43 @@ var _user$project$Main$view = function (_p0) {
 							_1: {
 								ctor: '::',
 								_0: A2(
-									_elm_lang$html$Html$input,
+									_elm_lang$html$Html$div,
+									{ctor: '[]'},
 									{
 										ctor: '::',
-										_0: _elm_lang$html$Html_Attributes$type_('checkbox'),
+										_0: A2(
+											_elm_lang$html$Html$label,
+											{ctor: '[]'},
+											{
+												ctor: '::',
+												_0: _elm_lang$html$Html$text('Strict'),
+												_1: {ctor: '[]'}
+											}),
 										_1: {
 											ctor: '::',
-											_0: _elm_lang$html$Html_Attributes$checked(_p1.strict),
-											_1: {
-												ctor: '::',
-												_0: _elm_lang$html$Html_Events$onCheck(_user$project$Main$StrictMode),
-												_1: {
+											_0: A2(
+												_elm_lang$html$Html$input,
+												{
 													ctor: '::',
-													_0: _elm_lang$html$Html_Attributes$disabled(_p3),
-													_1: {ctor: '[]'}
-												}
-											}
+													_0: _elm_lang$html$Html_Attributes$type_('checkbox'),
+													_1: {
+														ctor: '::',
+														_0: _elm_lang$html$Html_Attributes$checked(_p1.strict),
+														_1: {
+															ctor: '::',
+															_0: _elm_lang$html$Html_Events$onCheck(_user$project$Main$StrictMode),
+															_1: {
+																ctor: '::',
+																_0: _elm_lang$html$Html_Attributes$disabled(_p3),
+																_1: {ctor: '[]'}
+															}
+														}
+													}
+												},
+												{ctor: '[]'}),
+											_1: {ctor: '[]'}
 										}
-									},
-									{ctor: '[]'}),
+									}),
 								_1: {
 									ctor: '::',
 									_0: A2(
@@ -10465,7 +10483,7 @@ var _user$project$Main$genAnimation = function (count) {
 				A2(_elm_lang$core$List$range, 0, count - 1)),
 			{
 				ctor: '::',
-				_0: {ctor: '_Tuple2', _0: 0, _1: _user$project$Main$SeqDone},
+				_0: {ctor: '_Tuple2', _0: 300, _1: _user$project$Main$SeqDone},
 				_1: {ctor: '[]'}
 			}));
 	return _andrewMacmurray$elm_delay$Delay$sequence(
