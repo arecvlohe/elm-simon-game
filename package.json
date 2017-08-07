@@ -1,0 +1,26 @@
+{
+  "name": "elm-simon-game",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "chokidar '**/*.elm' -c 'elm make ./src/Main.elm --output ./dist/main.js' --initial"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arecvlohe/elm-simon-game.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/arecvlohe/elm-simon-game/issues"
+  },
+  "homepage": "https://github.com/arecvlohe/elm-simon-game#readme",
+  "devDependencies": {
+    "chokidar-cli": "^1.2.0"
+  },
+  "dependencies": {
+    "elm": "^0.18.0"
+  }
+}

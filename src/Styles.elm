@@ -11,6 +11,9 @@ boxContainer : Attribute a
 boxContainer =
     style
         [ ( "display", "flex" )
+        , ( "flex-direction", "column" )
+        , ( "justify-content", "center" )
+        , ( "align-items", "center" )
         ]
 
 
@@ -20,6 +23,13 @@ box color =
         [ ( "background", color )
         , ( "width", "200px" )
         , ( "height", "200px" )
+        ]
+
+
+group : Attribute a
+group =
+    style
+        [ ( "display", "flex" )
         ]
 
 

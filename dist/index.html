@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+  </head>
+
+  <body>
+    <div id="main"></div>
+    <script src="main.js"></script>
+    <script>
+      var node = document.getElementById('main');
+      var app = Elm.Main.embed(node);
+
+      const audio1 = new Audio(
+        "https://s3.amazonaws.com/freecodecamp/simonSound1.mp3"
+      );
+      const audio2 = new Audio(
+        "https://s3.amazonaws.com/freecodecamp/simonSound2.mp3"
+      );
+      const audio3 = new Audio(
+        "https://s3.amazonaws.com/freecodecamp/simonSound3.mp3"
+      );
+      const audio4 = new Audio(
+        "https://s3.amazonaws.com/freecodecamp/simonSound4.mp3"
+      );
+
+      app.ports.playsound.subscribe(function (color) {
+        switch (color) {
+          case "red": {
+            audio1.play()
+            return
+          }
+          case "yellow": {
+            audio2.play()
+            return
+          }
+          case "blue": {
+            audio3.play()
+            return
+          }
+          case "green": {
+            audio4.play()
+            return
+          }
+          default: { }
+        }
+      })
+    </script>
+  </body>
+
+</html>
