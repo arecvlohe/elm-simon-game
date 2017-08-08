@@ -14,3 +14,7 @@ As a user:
 - If I want to restart, I can hit a button to do so, and I return to a single step
 - I can play strict mode where if I get a button press wrong, the game notifies me and the game restarts the current random series from one
 - I can win the game by getting a series of 20 steps correct. I am notified of my victory and I restart with a new random series of buttons presses
+
+## Play!
+
+https://arecvlohe.github.io/elm-simon-game/
