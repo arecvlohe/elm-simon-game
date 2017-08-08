@@ -5,7 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <link rel="stylesheet" href="https://unpkg.com/wingcss" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Simon Game in Elm</title>
   </head>
 
   <body>
@@ -28,6 +30,8 @@
         "https://s3.amazonaws.com/freecodecamp/simonSound4.mp3"
       );
 
+      const audio5 = new Audio("error.wav")
+
       app.ports.playsound.subscribe(function (color) {
         switch (color) {
           case "red": {
@@ -46,8 +50,16 @@
             audio4.play()
             return
           }
+          case "error": {
+            audio5.play()
+            return
+          }
           default: { }
         }
+      })
+
+      app.ports.winAlert.subscribe(function () {
+        alert("Yay, you won the game! Let's start over :)")
       })
     </script>
   </body>

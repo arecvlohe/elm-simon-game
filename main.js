@@ -10107,6 +10107,11 @@ var _user$project$Ports$playsound = _elm_lang$core$Native_Platform.outgoingPort(
 	function (v) {
 		return v;
 	});
+var _user$project$Ports$winAlert = _elm_lang$core$Native_Platform.outgoingPort(
+	'winAlert',
+	function (v) {
+		return null;
+	});
 
 var _user$project$Styles$group = _elm_lang$html$Html_Attributes$style(
 	{
@@ -10214,60 +10219,12 @@ var _user$project$Main$view = function (_p0) {
 		{
 			ctor: '::',
 			_0: A2(
-				_elm_lang$html$Html$div,
+				_elm_lang$html$Html$h1,
+				{ctor: '[]'},
 				{
 					ctor: '::',
-					_0: _user$project$Styles$group,
+					_0: _elm_lang$html$Html$text('Simon Game in Elm'),
 					_1: {ctor: '[]'}
-				},
-				{
-					ctor: '::',
-					_0: A2(
-						_elm_lang$html$Html$div,
-						{
-							ctor: '::',
-							_0: A2(_user$project$Styles$wasClicked, _p2, 'red'),
-							_1: {
-								ctor: '::',
-								_0: _elm_lang$html$Html_Attributes$id('red'),
-								_1: {
-									ctor: '::',
-									_0: _elm_lang$html$Html_Attributes$class('box'),
-									_1: {
-										ctor: '::',
-										_0: _elm_lang$html$Html_Events$onClick(
-											_user$project$Main$UserClick('red')),
-										_1: {ctor: '[]'}
-									}
-								}
-							}
-						},
-						{ctor: '[]'}),
-					_1: {
-						ctor: '::',
-						_0: A2(
-							_elm_lang$html$Html$div,
-							{
-								ctor: '::',
-								_0: A2(_user$project$Styles$wasClicked, _p2, 'yellow'),
-								_1: {
-									ctor: '::',
-									_0: _elm_lang$html$Html_Attributes$id('yellow'),
-									_1: {
-										ctor: '::',
-										_0: _elm_lang$html$Html_Attributes$class('box'),
-										_1: {
-											ctor: '::',
-											_0: _elm_lang$html$Html_Events$onClick(
-												_user$project$Main$UserClick('yellow')),
-											_1: {ctor: '[]'}
-										}
-									}
-								}
-							},
-							{ctor: '[]'}),
-						_1: {ctor: '[]'}
-					}
 				}),
 			_1: {
 				ctor: '::',
@@ -10284,17 +10241,17 @@ var _user$project$Main$view = function (_p0) {
 							_elm_lang$html$Html$div,
 							{
 								ctor: '::',
-								_0: A2(_user$project$Styles$wasClicked, _p2, 'green'),
+								_0: A2(_user$project$Styles$wasClicked, _p2, 'red'),
 								_1: {
 									ctor: '::',
-									_0: _elm_lang$html$Html_Attributes$id('green'),
+									_0: _elm_lang$html$Html_Attributes$id('red'),
 									_1: {
 										ctor: '::',
 										_0: _elm_lang$html$Html_Attributes$class('box'),
 										_1: {
 											ctor: '::',
 											_0: _elm_lang$html$Html_Events$onClick(
-												_user$project$Main$UserClick('green')),
+												_user$project$Main$UserClick('red')),
 											_1: {ctor: '[]'}
 										}
 									}
@@ -10307,17 +10264,17 @@ var _user$project$Main$view = function (_p0) {
 								_elm_lang$html$Html$div,
 								{
 									ctor: '::',
-									_0: A2(_user$project$Styles$wasClicked, _p2, 'blue'),
+									_0: A2(_user$project$Styles$wasClicked, _p2, 'yellow'),
 									_1: {
 										ctor: '::',
-										_0: _elm_lang$html$Html_Attributes$id('blue'),
+										_0: _elm_lang$html$Html_Attributes$id('yellow'),
 										_1: {
 											ctor: '::',
 											_0: _elm_lang$html$Html_Attributes$class('box'),
 											_1: {
 												ctor: '::',
 												_0: _elm_lang$html$Html_Events$onClick(
-													_user$project$Main$UserClick('blue')),
+													_user$project$Main$UserClick('yellow')),
 												_1: {ctor: '[]'}
 											}
 										}
@@ -10331,78 +10288,139 @@ var _user$project$Main$view = function (_p0) {
 					ctor: '::',
 					_0: A2(
 						_elm_lang$html$Html$div,
-						{ctor: '[]'},
+						{
+							ctor: '::',
+							_0: _user$project$Styles$group,
+							_1: {ctor: '[]'}
+						},
 						{
 							ctor: '::',
 							_0: A2(
 								_elm_lang$html$Html$div,
-								{ctor: '[]'},
 								{
 									ctor: '::',
-									_0: _elm_lang$html$Html$text(
-										A2(
-											_elm_lang$core$Basics_ops['++'],
-											'Count ',
-											_elm_lang$core$Basics$toString(_p1.count))),
-									_1: {ctor: '[]'}
-								}),
+									_0: A2(_user$project$Styles$wasClicked, _p2, 'green'),
+									_1: {
+										ctor: '::',
+										_0: _elm_lang$html$Html_Attributes$id('green'),
+										_1: {
+											ctor: '::',
+											_0: _elm_lang$html$Html_Attributes$class('box'),
+											_1: {
+												ctor: '::',
+												_0: _elm_lang$html$Html_Events$onClick(
+													_user$project$Main$UserClick('green')),
+												_1: {ctor: '[]'}
+											}
+										}
+									}
+								},
+								{ctor: '[]'}),
 							_1: {
 								ctor: '::',
 								_0: A2(
 									_elm_lang$html$Html$div,
-									{ctor: '[]'},
 									{
 										ctor: '::',
-										_0: A2(
-											_elm_lang$html$Html$label,
-											{ctor: '[]'},
-											{
-												ctor: '::',
-												_0: _elm_lang$html$Html$text('Strict'),
-												_1: {ctor: '[]'}
-											}),
+										_0: A2(_user$project$Styles$wasClicked, _p2, 'blue'),
 										_1: {
 											ctor: '::',
-											_0: A2(
-												_elm_lang$html$Html$input,
-												{
+											_0: _elm_lang$html$Html_Attributes$id('blue'),
+											_1: {
+												ctor: '::',
+												_0: _elm_lang$html$Html_Attributes$class('box'),
+												_1: {
 													ctor: '::',
-													_0: _elm_lang$html$Html_Attributes$type_('checkbox'),
-													_1: {
-														ctor: '::',
-														_0: _elm_lang$html$Html_Attributes$checked(_p1.strict),
-														_1: {
-															ctor: '::',
-															_0: _elm_lang$html$Html_Events$onCheck(_user$project$Main$StrictMode),
-															_1: {
-																ctor: '::',
-																_0: _elm_lang$html$Html_Attributes$disabled(_p3),
-																_1: {ctor: '[]'}
-															}
-														}
-													}
-												},
-												{ctor: '[]'}),
-											_1: {ctor: '[]'}
+													_0: _elm_lang$html$Html_Events$onClick(
+														_user$project$Main$UserClick('blue')),
+													_1: {ctor: '[]'}
+												}
+											}
 										}
+									},
+									{ctor: '[]'}),
+								_1: {ctor: '[]'}
+							}
+						}),
+					_1: {
+						ctor: '::',
+						_0: A2(
+							_elm_lang$html$Html$div,
+							{ctor: '[]'},
+							{
+								ctor: '::',
+								_0: A2(
+									_elm_lang$html$Html$div,
+									{
+										ctor: '::',
+										_0: _elm_lang$html$Html_Attributes$class('text-center text-count'),
+										_1: {ctor: '[]'}
+									},
+									{
+										ctor: '::',
+										_0: _elm_lang$html$Html$text(
+											A2(
+												_elm_lang$core$Basics_ops['++'],
+												'Count ',
+												_elm_lang$core$Basics$toString(_p1.count))),
+										_1: {ctor: '[]'}
 									}),
 								_1: {
 									ctor: '::',
 									_0: A2(
-										_elm_lang$html$Html$button,
+										_elm_lang$html$Html$div,
 										{
 											ctor: '::',
-											_0: _elm_lang$html$Html_Events$onClick(_user$project$Main$Start),
-											_1: {
-												ctor: '::',
-												_0: _elm_lang$html$Html_Attributes$disabled(_p3),
-												_1: {ctor: '[]'}
-											}
+											_0: _elm_lang$html$Html_Attributes$class('center container-strict'),
+											_1: {ctor: '[]'}
 										},
 										{
 											ctor: '::',
-											_0: _elm_lang$html$Html$text('Start'),
-											_1: {ctor: '[]'}
+											_0: A2(
+												_elm_lang$html$Html$label,
+												{
+													ctor: '::',
+													_0: _elm_lang$html$Html_Attributes$class('label-strict'),
+													_1: {ctor: '[]'}
+												},
+												{
+													ctor: '::',
+													_0: _elm_lang$html$Html$text('Strict'),
+													_1: {ctor: '[]'}
+												}),
+											_1: {
+												ctor: '::',
+												_0: A2(
+													_elm_lang$html$Html$input,
+													{
+														ctor: '::',
+														_0: _elm_lang$html$Html_Attributes$type_('checkbox'),
+														_1: {
+															ctor: '::',
+															_0: _elm_lang$html$Html_Attributes$checked(_p1.strict),
+															_1: {
+																ctor: '::',
+																_0: _elm_lang$html$Html_Events$onCheck(_user$project$Main$StrictMode),
+																_1: {
+																	ctor: '::',
+																	_0: _elm_lang$html$Html_Attributes$disabled(_p3),
+																	_1: {
+																		ctor: '::',
+																		_0: _elm_lang$html$Html_Attributes$style(
+																			{
+																				ctor: '::',
+																				_0: {ctor: '_Tuple2', _0: 'margin-top', _1: '5px'},
+																				_1: {ctor: '[]'}
+																			}),
+																		_1: {ctor: '[]'}
+																	}
+																}
+															}
+														}
+													},
+													{ctor: '[]'}),
+												_1: {ctor: '[]'}
+											}
 										}),
 									_1: {
 										ctor: '::',
@@ -10410,24 +10428,60 @@ var _user$project$Main$view = function (_p0) {
 											_elm_lang$html$Html$button,
 											{
 												ctor: '::',
-												_0: _elm_lang$html$Html_Events$onClick(_user$project$Main$Reset),
+												_0: _elm_lang$html$Html_Events$onClick(_user$project$Main$Start),
 												_1: {
 													ctor: '::',
 													_0: _elm_lang$html$Html_Attributes$disabled(_p3),
-													_1: {ctor: '[]'}
+													_1: {
+														ctor: '::',
+														_0: _elm_lang$html$Html_Attributes$class('outline'),
+														_1: {
+															ctor: '::',
+															_0: _elm_lang$html$Html_Attributes$style(
+																{
+																	ctor: '::',
+																	_0: {ctor: '_Tuple2', _0: 'margin-right', _1: '20px'},
+																	_1: {ctor: '[]'}
+																}),
+															_1: {ctor: '[]'}
+														}
+													}
 												}
 											},
 											{
 												ctor: '::',
-												_0: _elm_lang$html$Html$text('Reset'),
+												_0: _elm_lang$html$Html$text('Start'),
 												_1: {ctor: '[]'}
 											}),
-										_1: {ctor: '[]'}
+										_1: {
+											ctor: '::',
+											_0: A2(
+												_elm_lang$html$Html$button,
+												{
+													ctor: '::',
+													_0: _elm_lang$html$Html_Events$onClick(_user$project$Main$Reset),
+													_1: {
+														ctor: '::',
+														_0: _elm_lang$html$Html_Attributes$disabled(_p3),
+														_1: {
+															ctor: '::',
+															_0: _elm_lang$html$Html_Attributes$class('outline'),
+															_1: {ctor: '[]'}
+														}
+													}
+												},
+												{
+													ctor: '::',
+													_0: _elm_lang$html$Html$text('Reset'),
+													_1: {ctor: '[]'}
+												}),
+											_1: {ctor: '[]'}
+										}
 									}
 								}
-							}
-						}),
-					_1: {ctor: '[]'}
+							}),
+						_1: {ctor: '[]'}
+					}
 				}
 			}
 		});
@@ -10575,6 +10629,30 @@ var _user$project$Main$update = F2(
 					model,
 					{ctor: '[]'}) : ((checksPass && _elm_lang$core$Native_Utils.eq(
 					_elm_lang$core$List$length(nextUserInput),
+					20)) ? A2(
+					_elm_lang$core$Platform_Cmd_ops['!'],
+					_elm_lang$core$Native_Utils.update(
+						_user$project$Main$initial,
+						{on: true, clicked: _p5, count: 1, strict: model.strict}),
+					{
+						ctor: '::',
+						_0: _user$project$Ports$playsound(_p5),
+						_1: {
+							ctor: '::',
+							_0: _user$project$Ports$winAlert(
+								{ctor: '_Tuple0'}),
+							_1: {
+								ctor: '::',
+								_0: A3(_andrewMacmurray$elm_delay$Delay$after, 300, _elm_lang$core$Time$millisecond, _user$project$Main$ResetColor),
+								_1: {
+									ctor: '::',
+									_0: A2(_elm_lang$core$Random$generate, _user$project$Main$NewSequence, _user$project$Helpers$genSeq),
+									_1: {ctor: '[]'}
+								}
+							}
+						}
+					}) : ((checksPass && _elm_lang$core$Native_Utils.eq(
+					_elm_lang$core$List$length(nextUserInput),
 					model.count)) ? A2(
 					_elm_lang$core$Platform_Cmd_ops['!'],
 					_elm_lang$core$Native_Utils.update(
@@ -10616,7 +10694,7 @@ var _user$project$Main$update = F2(
 						{count: 1, on: true, sequence: model.sequence, strict: true}),
 					{
 						ctor: '::',
-						_0: _user$project$Ports$playsound(_p5),
+						_0: _user$project$Ports$playsound('error'),
 						_1: {
 							ctor: '::',
 							_0: _user$project$Main$genAnimation(1),
@@ -10632,7 +10710,7 @@ var _user$project$Main$update = F2(
 						}),
 					{
 						ctor: '::',
-						_0: _user$project$Ports$playsound(_p5),
+						_0: _user$project$Ports$playsound('error'),
 						_1: {
 							ctor: '::',
 							_0: A3(_andrewMacmurray$elm_delay$Delay$after, 300, _elm_lang$core$Time$millisecond, _user$project$Main$ResetColor),
@@ -10642,7 +10720,7 @@ var _user$project$Main$update = F2(
 								_1: {ctor: '[]'}
 							}
 						}
-					}))));
+					})))));
 			case 'StrictMode':
 				return _p4._0 ? A2(
 					_elm_lang$core$Platform_Cmd_ops['!'],
