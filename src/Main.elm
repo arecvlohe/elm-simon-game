@@ -2,7 +2,7 @@ module Main exposing (..)
 
 -- CORE IMPORTS
 
-import Html exposing (Html, program, text, div, button, input, label)
+import Html exposing (Html, program, text, div, button, input, label, h1)
 import Html.Attributes exposing (class, id, style, type_, checked, disabled)
 import Html.Events exposing (onClick, onCheck)
 import Random exposing (generate)
@@ -19,7 +19,7 @@ import Delay exposing (after, sequence, withUnit)
 
 -- LOCAL IMPORTS
 
-import Ports exposing (playsound)
+import Ports exposing (playsound, winAlert)
 import Helpers exposing (genSeq, colorSeq, checkUserInput)
 import Styles exposing (boxContainer, box, wasClicked, group)
 
@@ -124,6 +124,18 @@ update msg model =
             in
                 if model.isRunning then
                     model ! []
+                else if checksPass && length nextUserInput == 20 then
+                    { initial
+                        | on = True
+                        , clicked = color
+                        , count = 1
+                        , strict = model.strict
+                    }
+                        ! [ playsound color
+                          , winAlert ()
+                          , after 300 millisecond ResetColor
+                          , generate NewSequence genSeq
+                          ]
                 else if checksPass && length nextUserInput == model.count then
                     { model
                         | userInput = []
@@ -149,12 +161,12 @@ update msg model =
                         , sequence = model.sequence
                         , strict = True
                     }
-                        ! [ playsound color
+                        ! [ playsound "error"
                           , genAnimation 1
                           ]
                 else
                     { model | clicked = color, userInput = [] }
-                        ! [ playsound color
+                        ! [ playsound "error"
                           , after 300 millisecond ResetColor
                           , genAnimation model.count
                           ]
@@ -187,7 +199,8 @@ subscriptions model =
 view : Model -> Html Msg
 view { count, clicked, strict, isRunning } =
     div [ boxContainer ]
-        [ div
+        [ h1 [] [ text "Simon Game in Elm" ]
+        , div
             [ group ]
             [ div
                 [ wasClicked clicked "red"
@@ -222,13 +235,13 @@ view { count, clicked, strict, isRunning } =
                 []
             ]
         , div []
-            [ div [] [ text ("Count " ++ (toString count)) ]
-            , div []
-                [ label [] [ text "Strict" ]
-                , input [ type_ "checkbox", checked strict, onCheck StrictMode, disabled isRunning ] []
+            [ div [ class "text-center text-count" ] [ text ("Count " ++ (toString count)) ]
+            , div [ class "center container-strict" ]
+                [ label [ class "label-strict" ] [ text "Strict" ]
+                , input [ type_ "checkbox", checked strict, onCheck StrictMode, disabled isRunning, style [ ( "margin-top", "5px" ) ] ] []
                 ]
-            , button [ onClick Start, disabled isRunning ] [ text "Start" ]
-            , button [ onClick Reset, disabled isRunning ] [ text "Reset" ]
+            , button [ onClick Start, disabled isRunning, class "outline", style [ ( "margin-right", "20px" ) ] ] [ text "Start" ]
+            , button [ onClick Reset, disabled isRunning, class "outline" ] [ text "Reset" ]
             ]
         ]
 

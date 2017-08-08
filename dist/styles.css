@@ -1,0 +1,10 @@
+.text-count,
+.label-strict,
+button.outline {
+  text-transform: uppercase;
+}
+
+button.outline,
+.box {
+  cursor: pointer;
+}
