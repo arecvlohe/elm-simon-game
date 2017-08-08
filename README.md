@@ -1,6 +1,6 @@
 # Simon Game in Elm
 
-This project in a remix of the freeCodeCamp project challenge: https://www.freecodecamp.org/challenges/build-a-simon-game. The intention of this project was to gain a better understanding of how to handle asynchronous side-effects such as timing events using the Elm language and available libraries. This project satisfies the following user stories that are listed under the freeCodeCamp project challenge. Not all features of HTML5 are available in the Elm language so I had to use Elm ports to play the game sounds, for example.
+This project is a remix of the freeCodeCamp project challenge: https://www.freecodecamp.org/challenges/build-a-simon-game. The intention of this project was to gain a better understanding of how to handle asynchronous side-effects such as timing events using the Elm language and available libraries. This project satisfies the following user stories that are listed under the freeCodeCamp project challenge. Not all features of HTML5 are available in the Elm language so for example I had to use Elm ports to play the game sounds. Generally speaking, adding new functionality was easier than it was in JavaScript. I am a bit more confident in myself now and actually using Elm in a real world project because I know how to better handle dynamic asynchronous processes in the language. I look forward to pairing Elm with Elixir and creating a multiplayer game out of this concept.
 
 ## User Stories
 
